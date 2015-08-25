@@ -1,6 +1,7 @@
-
-
-__author__ = 'Nils'
+"""
+Newsfetcher let's you easily choose your favorite subreddit and prints the top 30 posts of a subreddit to you.
+Written by Nils
+"""
 
 import praw
 
