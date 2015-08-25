@@ -14,7 +14,7 @@ def main():
     userchoice = input("Your choice: ")
     # Gets 30 top posts from the specific subreddit.
     submissions = r.get_subreddit(userchoice).get_top(limit=30)
-    # Formats the printed output and adds a nice counter:
+    # Formats the printed output and adds a nice counter.
     submission_form = "{}) {} : {} <{}>"
     count = 1
     print("Top 30 Posts from", userchoice)
