@@ -4,6 +4,7 @@ Written by Nils
 """
 
 import praw
+from praw.errors import InvalidSubreddit
 
 def main():
 
@@ -19,9 +20,13 @@ def main():
     count = 1
     print("Top 30 Posts from", userchoice)
     print('-' * 25)
-    for sub in submissions:
-        print(submission_form.format(count, sub.ups, sub.title, sub.url))
-        count +=1
+    try:
+        for sub in submissions:
+            print(submission_form.format(count, sub.ups, sub.title, sub.url))
+            count +=1
+    except InvalidSubreddit:
+        print("Invalid subreddit!")
+        
 
 if __name__ == "__main__":
     main()
