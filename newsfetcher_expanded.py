@@ -2,13 +2,13 @@
 Newsfetcher let's you easily choose your favorite subreddit and prints the top 30 posts of a subreddit to you.
 Written by Nils
 """
-
+# Imports reddits API.
 import praw
+# Import the error handling module.
 from praw.errors import InvalidSubreddit
 
+
 def main():
-
-
     r = praw.Reddit(user_agent='Newsfetcher by /u/vicerunt')
     print("Choose your desired subreddit:")
     # Stores the entered subreddit in userchoice.
@@ -23,10 +23,10 @@ def main():
     try:
         for sub in submissions:
             print(submission_form.format(count, sub.ups, sub.title, sub.url))
-            count +=1
+            count += 1
     except InvalidSubreddit:
         print("Invalid subreddit!")
-        
+
 
 if __name__ == "__main__":
     main()
