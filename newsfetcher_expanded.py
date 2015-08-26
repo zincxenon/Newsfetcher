@@ -12,7 +12,7 @@ def main():
     r = praw.Reddit(user_agent='Newsfetcher by /u/vicerunt')
     print("Choose your desired subreddit:")
     # Stores the entered subreddit in userchoice.
-    userchoice = input("Your choice: ")
+    userchoice = input("Your choice: ").split('/')[-1]
     # Gets 30 top posts from the specific subreddit.
     submissions = r.get_subreddit(userchoice).get_top(limit=30)
     # Formats the printed output and adds a nice counter.
